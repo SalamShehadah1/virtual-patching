@@ -1,7 +1,7 @@
 <html>
-<p align="left">
+<p>
 <b>Simple Flask web application</b> that demonstrates a login brute-force vulnerability and how a <b>virtual patch</b> can protect it.
-The patch adds rate limiting and temporarily blocks the user after several failed attempts, without modifying the original login logic.
+The patch adds rate limiting and temporarily blocks the user after several failed attempts, without modifying the original login logic.<br>
 Educational demo project.
 </p>
 
