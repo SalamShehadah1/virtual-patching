@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+   <meta charset="utf-8">
+   <title>Login</title>
+   <style>
+      body {
+         background-image: url(static/images/image1.PNG);
+         background-repeat: no-repeat;
+         background-size: cover;
+         background-position: center
+      }
+
+      .login-box {
+         width: 550px;
+         height: 450px;
+         background: rgba(255, 255, 255, 0.15);
+         backdrop-filter: blur(11px);
+         border: 1px solid rgba(255, 255, 255, 0.3);
+         border-radius: 15px;
+         margin-top: 9%;
+         margin-left: 31.5%;
+         box-shadow: 0 0 25px rgba(0, 0, 0, 0.3)
+      }
+
+      h2 {
+         padding-left: 42%;
+         color: black
+      }
+
+      #one {
+         display: inline;
+         color: black;
+         font-size: 20px;
+         padding: 7% 10%;
+         font-weight: bold
+      }
+
+      #two {
+         color: black;
+         font-size: 18px;
+         padding: 4% 12%
+      }
+
+      #three {
+         display: inline;
+         color: red;
+         font-size: 16px;
+         padding: 7% 12%;
+         font-weight: bold
+      }
+
+      input {
+         background: transparent;
+         border: none;
+         border-bottom: 2px solid black;
+         outline: none;
+         color: black;
+         width: 75%;
+         margin-left: 12%
+      }
+
+      button {
+         padding: 1% 33%;
+         margin-left: 14%;
+         background-color: skyblue;
+         border-radius: 8px;
+         border-width: thin;
+         border-color: white
+      }
+   </style>
+
+</head>
+
+<body>
+
+   <div class="login-box">
+
+      <h2>LOGIN</h2>
+      <br><br>
+      <p id="one">Please enter your credentials</p>
+      <br><br><br>
+      <form method="POST" action="/">
+
+         <label id="two">Username
+            <input type="text" name="username">
+         </label>
+         <br><br><br>
+         <label id="two">Password
+            <input type="password" name="password" autofocus>
+         </label>
+         <br><br>
+         {% with messages=get_flashed_messages() %}
+         {% if messages %}
+         <p id="three">{{messages[0]}}</p>
+         {% elif error %}
+         <p id="three">{{error}}</p>
+         {% endif %}
+         {% endwith %}
+         <br><br>
+         <button>login</button>
+
+      </form>
+
+   </div>
+
+</body>
+
+</html>
